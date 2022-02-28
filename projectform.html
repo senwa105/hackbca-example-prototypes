@@ -1,0 +1,179 @@
+<!-- 
+    Project Modification Form
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+   <meta charset="UTF-8">
+ 
+   <title>HackBCA 20XX</title>
+   <link rel="shortcut icon" type="image/jpg" href="/images/favicon.ico" />
+ 
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="/styles/materialize.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ 
+ 
+   <!-- Shared site-wide CSS  -->
+   <link rel="stylesheet" href="/styles/main.css">
+   <!-- Page specific CSS -->
+   <link rel="stylesheet" href="/styles/newevent.css">
+ </head>
+ 
+ <body>
+ 
+   <!-- https://materializecss.com/navbar.html -->
+   <header>
+     <nav>
+       <div class="nav-wrapper">
+         <img class="hide-on-small-and-down" src="/images/bca-logo-transparent.png">
+         <a href="/" class="brand-logo">HackBCA 20XX</a>
+         <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+         <ul id="desktop-nav" class="right hide-on-med-and-down">
+           <li><a href="/events.html"><i class="material-icons left">event</i>Events</a></li>
+           <li><a href="/attendees.html"><i class="material-icons left">people</i>Attendees</a></li>
+           <li><a href="/projects.html"><i class="material-icons left">build</i>Projects</a></li>
+           <li><a href="/login.html" class="btn">Login / Register</a></li>
+         </ul>
+       </div>
+     </nav>
+     <ul id="mobile-nav" class="sidenav">
+       <li><a href="/events.html"><i class="material-icons left">event</i>Events</a></li>
+       <li><a href="/attendees.html"><i class="material-icons left">people</i>Attendees</a></li>
+       <li><a href="/projects.html"><i class="material-icons left">build</i>Projects</a></li>
+       <li><a href="/login.html" class="btn">Login / Register</a></li>
+     </ul>
+   </header>
+ 
+   <main>
+ 
+     <form id="create_update_event" method="post" action="/event">
+       <!-- action and method depend on C vs U-->
+       <input type="hidden" name="event_id" id="event_id" value="0">
+       <!-- server sets event_id value-->
+ 
+       <div class="container">
+         <div class="card grey lighten-4">
+           <div class="card-content">
+ 
+             <span class="card-title">
+               <h1>Create New / Modify Project</h1>
+             </span>
+ 
+ 
+             <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" id="event_name" class="validate" data-length="32" required>
+                  <label for="project_name">Project Name</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" id="event_name" class="validate" data-length="32" required>
+                  <label for="project_owner">Owner Name</label>
+                </div>
+              </div>
+ 
+             <!-- https://materializecss.com/select.html -->
+             <div class="row">
+                
+               <div class="input-field col s6">
+                 <select id="project_type" name="project_type" required>
+                   <option value="" disabled selected>Select a type</option>
+                   <option value="Main">General</option>
+                   <option value="Workshop">Web Dev</option>
+                   <option value="Food">Cybersecurity</option>
+                   <option value="Talk">Video Games</option>
+                 </select>
+                 <label for="project_type">Project Type</label>
+               </div>
+
+               <div class="input-field col s6">
+                <input type="text" id=event_date name="event_date" class="datepicker no-autoinit" required>
+                <label for="project_date">Date</label>
+              </div>
+ 
+             <div class="row">
+               <div class="input-field col s12">
+                 <textarea id="project_description" class="materialize-textarea" data-length="500"></textarea>
+                 <label for="project_description">Description</label>
+               </div>
+             </div>
+ 
+             <div class="button_wrapper">
+               <button class="submit waves-effect waves-light btn" type="submit">Create</button>
+             </div>
+           </div>
+         </div>
+ 
+       </div>
+     </form>
+   </main>
+ 
+   <!-- Special initialization script for initializing .datepicker and.timepicker with options -->
+   <script>
+     document.addEventListener('DOMContentLoaded', function () {
+       var elems = document.querySelectorAll('.datepicker');
+       var instances = M.Datepicker.init(elems, {
+         format: 'mm-dd-yyyy',
+         autoClose: true
+       });
+     });
+ 
+     document.addEventListener('DOMContentLoaded', function () {
+       var elems = document.querySelectorAll('.timepicker');
+       var instances = M.Timepicker.init(elems, {
+         defaultTime: 'now', // Set default time: 'now', '1:30AM', '16:30'
+         twelveHour: true, // Use AM/PM or 24-hour format
+         autoClose: false, // automatic close timepicker
+       });
+     });
+ 
+   </script>
+ 
+ 
+   <!-- https://materializecss.com/footer.html -->
+   <footer class="page-footer">
+     <div class="container">
+       <div class="row">
+         <div class="col l6 s12">
+           <h5 class="white-text">Sponsors</h5>
+           <p>hackBCA is brought to you by:</p>
+           <ul>
+             <li>BCA PPO</li>
+             <li>Tech-Pa</li>
+             <li>&lt;Corporate Sponsors&gt;</li>
+             <li>Wanna join this list? Sponsor us!</li>
+           </ul>
+         </div>
+         <div class="col l4 offset-l2 s12">
+           <h5 class="white-text">Contact Us</h5>
+           <ul>
+             <li>Twitter: @hackbca</li>
+             <li>Instagram: @hackbca</li>
+             <li>Facebook: @hackbca</li>
+             <li>Email: hackbca@_____</li>
+           </ul>
+         </div>
+       </div>
+     </div>
+     <div class="footer-copyright">
+       <div class="container">
+         © 2021 Copyright Text
+         <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+       </div>
+     </div>
+   </footer>
+ 
+   <!-- Compiled and minified JavaScript -->
+   <script src="/js/materialize.min.js"></script>
+ 
+   <!-- initialize Materialize elements -->
+   <script> M.AutoInit();</script>
+ 
+ 
+ </body>
+ 
+ </html>
