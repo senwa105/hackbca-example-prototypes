@@ -64,14 +64,14 @@
  
              <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" id="event_name" class="validate" data-length="32" required>
+                  <input type="text" id="project_name" class="validate" data-length="32" required>
                   <label for="project_name">Project Name</label>
                 </div>
               </div>
 
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" id="event_name" class="validate" data-length="32" required>
+                  <input type="text" id="project_name" class="validate" data-length="32" required>
                   <label for="project_owner">Owner Name</label>
                 </div>
               </div>
@@ -91,7 +91,7 @@
                </div>
 
                <div class="input-field col s6">
-                <input type="text" id=event_date name="event_date" class="datepicker no-autoinit" required>
+                <input type="text" id="project_date" name="project_date" class="datepicker no-autoinit" required>
                 <label for="project_date">Date</label>
               </div>
  
@@ -101,6 +101,13 @@
                  <label for="project_description">Description</label>
                </div>
              </div>
+
+             <div class="row">
+              <div class="input-field col s12">
+                <textarea id="project_tech_stack" class="materialize-textarea" data-length="500"></textarea>
+                <label for="projec_tech_stack">Tech Stack</label>
+              </div>
+            </div>
  
              <div class="button_wrapper">
                <button class="submit waves-effect waves-light btn" type="submit">Create</button>
